@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-12">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <button type="submit" class="btn btn-success" [disabled]="!recipeForm.valid">{{  editMode ? 'Edit' : 'Add'}}</button>
+        <button type="button" class="btn btn-danger"(click)="onDeleteCancel()">{{ editMode ? 'Delete' : 'Cancel'}}</button>
+      </div>
+      <div class="form-group">
+        <label for="recipeName">Name</label>
+        <div class="row no-gutters">
+        <input type="text" class="form-control col-8" id="recipeName" formControlName="name">
+      </div></div>
+      <div class="form-group">
+        <label for="recipeImg">Recipe Image</label>
+        <div class="row no-gutters justify-content-between">
+        <input type="text" class="form-control col-8" id="recipeImg" placeholder="Image URL" formControlName="imagePath" #imagePath>
+        <img [src]="imagePath.value" alt="" class="col-3 img-responsive">
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="recipeDesc">Recipe Description</label>
+        <textarea name="recipeDesc" id="recipeDesc" rows="6" class="form-control" formControlName="desc"></textarea>
+      </div>
+      <hr>
+      <div class="row justify-content-between">
+        <button class="btn btn-success mb-3" type="button" (click)="addIngred()">Add Ingredient</button>
+        <div class="col-12" formArrayName="ingredients">
+          <div class="row justify-content-between mb-2" *ngFor="let ingredientControl of formIngreds.controls; let i = index" [formGroupName]="i">
+            <div class="col-7">
+              <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="col-2">
+              <input type="number" class="form-control" formControlName="amount" min="1">
+            </div>
+            <div class="col-2">
+              <button class="btn btn-danger" type="button" (click)="deleteIngred(i)">X</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

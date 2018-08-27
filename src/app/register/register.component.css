@@ -1,0 +1,13 @@
+.form-wrapper{
+    border:1px solid #ddd;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+input.ng-invalid.ng-touched{
+    border-color: rgb(223, 30, 5);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(223,30,5,.25);
+}

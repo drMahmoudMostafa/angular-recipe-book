@@ -1,0 +1,10 @@
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched{
+    border-color:rgb(185, 7, 75)
+}
+img{
+    max-height: 100px;
+}
+input{
+    height: 35px;
+}

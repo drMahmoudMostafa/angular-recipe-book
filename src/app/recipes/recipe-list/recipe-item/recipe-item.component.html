@@ -1,0 +1,11 @@
+<a class="list-group-item list-group-item-action flex-column align-items-start mb-2" [routerLink]="['/recipes', recipeId]" routerLinkActive="active">
+    <div class="row no-gutters w-100 justify-content-between">
+      <div class="col-7">
+        <h5 class="mb-1 text-uppercase">{{recipe.name}}</h5>
+        <p class="mb-1 text-capitalize">{{recipe.desc | shorten:60}}</p>
+      </div>
+      <div class="col-auto">
+        <img [src]="recipe.imagePath" alt="" class="img-responsive">
+      </div>
+    </div>
+  </a>
