@@ -37,8 +37,6 @@ export class RecipeListComponent implements OnInit {
     this.recipeService.fetchRecipes();
   }
   ngOnInit() {
-    console.log(this.recipes.length);
     this.getRecipes();
-    console.log(this.recipes.length);
   }
 }

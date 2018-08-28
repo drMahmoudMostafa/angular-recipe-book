@@ -1,10 +1,12 @@
+import { RouteAnimations } from './../shared/route-animation';
 import {
   Ingredient
 } from './../shared/ingredient.model';
 import {
   Component,
   OnInit,
-  OnDestroy
+  OnDestroy,
+  HostBinding
 } from '@angular/core';
 import {
   ShoppingListService
@@ -14,9 +16,11 @@ import { Subscription } from '../../../node_modules/rxjs/Subscription';
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.css']
+  styleUrls: ['./shopping-list.component.css'],
+  animations: [RouteAnimations]
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
+  @HostBinding('@routeAnimation') routeAnimation = true;
   ingredients: Ingredient[];
   subscription: Subscription;
   constructor(private shoppingListServ: ShoppingListService) {}

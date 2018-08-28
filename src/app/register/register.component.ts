@@ -6,15 +6,19 @@ import {
 } from '@angular/router';
 import {
   Component,
-  OnInit
+  OnInit,
+  HostBinding
 } from '@angular/core';
+import { RouteAnimations } from '../shared/route-animation';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  animations: [RouteAnimations]
 })
 export class RegisterComponent implements OnInit {
+  @HostBinding('@routeAnimation') routeAnimation = true;
   loginMode: string;
   constructor(private router: Router, private thisRoute: ActivatedRoute, private authServ: AuthService) {}
 

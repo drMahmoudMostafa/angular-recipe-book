@@ -1,7 +1,7 @@
 import {
   Injectable
 } from '@angular/core';
-import * as firebase from 'firebase';
+import firebase = require('firebase');
 @Injectable()
 export class AuthService {
 

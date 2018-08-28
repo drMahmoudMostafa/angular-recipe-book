@@ -1,9 +1,11 @@
+import { RouteAnimations } from './../../shared/route-animation';
 import {
   RecipesService
 } from './../recipes.service';
 import {
   Component,
-  OnInit
+  OnInit,
+  HostBinding
 } from '@angular/core';
 import {
   ActivatedRoute,
@@ -23,9 +25,11 @@ import {
 @Component({
   selector: 'app-edit-recipe',
   templateUrl: './edit-recipe.component.html',
-  styleUrls: ['./edit-recipe.component.css']
+  styleUrls: ['./edit-recipe.component.css'],
+  animations: [RouteAnimations]
 })
 export class EditRecipeComponent implements OnInit {
+  @HostBinding('@routeAnimation') routeAnimation = true;
   formIngred = this.formBuilder.group({
     name: '',
     amount: this.formBuilder.control(Validators.pattern(/^\d*[1-9]\d*$/))

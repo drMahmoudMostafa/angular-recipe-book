@@ -8,3 +8,6 @@ img{
 input{
     height: 35px;
 }
+:host{
+    display: block;
+}

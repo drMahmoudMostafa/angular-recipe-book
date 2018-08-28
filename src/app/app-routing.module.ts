@@ -10,15 +10,15 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 const appRoutes: Routes = [
     {path: '',  redirectTo: '/recipes', pathMatch: 'full', data: {page: '0'}},
-    {path: 'recipes',  component: RecipesComponent, children: [
+    {path: 'recipes',  component: RecipesComponent, data: {animation: 'RecipePage'}, children: [
         {path: 'new', component: EditRecipeComponent},
         {path: ':id', component: RecipeDetailComponent},
         {path: ':id/edit', component: EditRecipeComponent},
         {path: '', component: SelectRecipeComponent, pathMatch: 'full'}
     ]},
-    {path: 'shopping-list',  component: ShoppingListComponent},
-    {path: 'logIn', component: RegisterComponent, data: {loginMode: 'logIn'}},
-    {path: 'signUp', component: RegisterComponent, data: {loginMode: 'signUp'}}
+    {path: 'shopping-list',  component: ShoppingListComponent, data: {animation: 'ShoppinListPage'}},
+    {path: 'logIn', component: RegisterComponent, data: {loginMode: 'logIn', animation: 'LogInPage'}},
+    {path: 'signUp', component: RegisterComponent, data: {loginMode: 'signUp', animation: 'SignUpPage'}}
 ];
 
 @NgModule({

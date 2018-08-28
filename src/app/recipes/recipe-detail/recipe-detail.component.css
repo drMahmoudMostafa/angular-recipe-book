@@ -4,3 +4,6 @@ img{
 a{
     cursor: pointer;
 }
+:host{
+    display: block;
+}

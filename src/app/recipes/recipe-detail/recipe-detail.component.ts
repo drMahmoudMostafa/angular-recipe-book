@@ -2,17 +2,21 @@ import { RecipesService } from './../recipes.service';
 import { Recipe } from './../recipe.model';
 import {
   Component,
-  OnInit
+  OnInit,
+  HostBinding
 } from '@angular/core';
 import { ShoppingListService } from '../../shopping-list/shopping-list.service';
 import { ActivatedRoute, Params, Router } from '../../../../node_modules/@angular/router';
+import { RouteAnimations } from '../../shared/route-animation';
 
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
-  styleUrls: ['./recipe-detail.component.css']
+  styleUrls: ['./recipe-detail.component.css'],
+  animations: [RouteAnimations]
 })
 export class RecipeDetailComponent implements OnInit {
+  @HostBinding('@routeAnimation') routeAnimation = true;
   recipe: Recipe;
   recipeId: number;
   constructor(

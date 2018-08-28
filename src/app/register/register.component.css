@@ -11,3 +11,6 @@ input.ng-invalid.ng-touched{
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(223,30,5,.25);
 }
+:host{
+    display: block;
+}
