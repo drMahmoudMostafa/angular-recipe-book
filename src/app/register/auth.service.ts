@@ -9,13 +9,15 @@ import firebase = require('firebase');
 export class AuthService {
   processSuccess = new Subject < boolean > ();
   userName = new Subject < string > ();
-
+  token = '';
   constructor() {}
   signUp(firstName: string, lastName: string = '', email: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(
         (data) => {
+          // submitting the success of the signing up
           this.processSuccess.next(true);
+          // adding the userName and the profile image info
           const {
             user
           } = data;
@@ -38,12 +40,22 @@ export class AuthService {
         const userName = data.user.displayName;
         this.userName.next(userName);
         this.processSuccess.next(true);
+        firebase.auth().currentUser.getIdToken().then(
+          (token: string) => {
+            this.token = token;
+          }
+        );
       }
     );
 
 
   }
   getToken() {
-    firebase.auth().currentUser.getIdToken();
+    firebase.auth().currentUser.getIdToken().then(
+      (token: string) => {
+        this.token = token;
+      }
+    );
+    return this.token;
   }
 }
