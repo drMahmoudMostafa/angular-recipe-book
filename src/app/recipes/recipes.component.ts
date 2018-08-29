@@ -1,9 +1,11 @@
+import { RecipesService } from './recipes.service';
 import {
   Component,
   OnInit,
   HostBinding
 } from '@angular/core';
 import { RouteAnimations } from '../shared/route-animation';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipes',
@@ -13,8 +15,14 @@ import { RouteAnimations } from '../shared/route-animation';
 })
 export class RecipesComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;
-  constructor() {}
+  constructor(private router: Router, private recipesServ: RecipesService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.recipesServ.recipes.length === 0) {
+      this.router.navigate(['/recipes', 'new']);
+    } else {
+      this.router.navigate(['/recipes']);
+    }
+  }
 
 }

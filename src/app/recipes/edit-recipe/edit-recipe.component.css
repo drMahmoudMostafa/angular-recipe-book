@@ -1,6 +1,7 @@
 input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched{
-    border-color:rgb(185, 7, 75)
+    border-color:rgb(185, 7, 75);
+    box-shadow: 0 0 0 0.2rem rgba(223, 30, 5, .25);
 }
 img{
     max-height: 100px;
