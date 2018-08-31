@@ -27,7 +27,7 @@ export class AuthService {
               displayName: firstName + ' ' + lastName,
               photoURL: ''
             }).then(
-              (s) => {
+              () => {
                 this.userName.next(user.displayName);
               }
             );
@@ -39,6 +39,7 @@ export class AuthService {
       (data) => {
         const userName = data.user.displayName;
         this.userName.next(userName);
+        console.log(userName);
         this.processSuccess.next(true);
         firebase.auth().currentUser.getIdToken().then(
           (token: string) => {

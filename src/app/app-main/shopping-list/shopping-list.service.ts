@@ -3,7 +3,7 @@ import {
 } from '@angular/core';
 import {
   Ingredient
-} from '../shared/ingredient.model';
+} from '../../shared/ingredient.model';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()

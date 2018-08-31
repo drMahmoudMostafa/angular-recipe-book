@@ -1,26 +1,9 @@
-import { RouteAnimations } from './../../shared/route-animation';
-import {
-  RecipesService
-} from './../recipes.service';
-import {
-  Component,
-  OnInit,
-  HostBinding
-} from '@angular/core';
-import {
-  ActivatedRoute,
-  Params,
-  Router
-} from '../../../../node_modules/@angular/router';
-import {
-  FormGroup,
-  FormBuilder,
-  FormArray,
-  Validators
-} from '../../../../node_modules/@angular/forms';
-import {
-  formControlBinding
-} from '../../../../node_modules/@angular/forms/src/directives/reactive_directives/form_control_directive';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { RouteAnimations } from '../../../shared/route-animation';
+import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+import { RecipesService } from '../recipes.service';
+
 
 @Component({
   selector: 'app-edit-recipe',

@@ -1,4 +1,4 @@
-import { RouteAnimations } from './../../shared/route-animation';
+import { RouteAnimations } from './../../../shared/route-animation';
 import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({

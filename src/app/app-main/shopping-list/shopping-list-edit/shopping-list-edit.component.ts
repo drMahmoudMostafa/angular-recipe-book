@@ -1,21 +1,10 @@
-import {
-  Ingredient
-} from './../../shared/ingredient.model';
-import {
-  NgForm
-} from '@angular/forms';
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  OnDestroy
-} from '@angular/core';
-import {
-  ShoppingListService
-} from './../shopping-list.service';
-import {
-  Subscription
-} from '../../../../node_modules/rxjs/Subscription';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+// tslint:disable-next-line:import-blacklist
+import { Subscription } from 'rxjs';
+import { Ingredient } from '../../../shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list.service';
+
 
 @Component({
   selector: 'app-shopping-list-edit',

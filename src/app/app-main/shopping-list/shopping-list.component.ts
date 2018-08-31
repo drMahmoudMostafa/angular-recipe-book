@@ -1,17 +1,10 @@
-import { RouteAnimations } from './../shared/route-animation';
-import {
-  Ingredient
-} from './../shared/ingredient.model';
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  HostBinding
-} from '@angular/core';
-import {
-  ShoppingListService
-} from './shopping-list.service';
-import { Subscription } from '../../../node_modules/rxjs/Subscription';
+import { Component, OnInit, OnDestroy, HostBinding } from '@angular/core';
+import { RouteAnimations } from '../../shared/route-animation';
+import { Ingredient } from '../../shared/ingredient.model';
+// tslint:disable-next-line:import-blacklist
+import { Subscription } from 'rxjs';
+import { ShoppingListService } from './shopping-list.service';
+
 
 @Component({
   selector: 'app-shopping-list',

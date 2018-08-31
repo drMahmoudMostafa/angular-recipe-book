@@ -1,13 +1,10 @@
-import { RecipesService } from './../recipes.service';
-import { Recipe } from './../recipe.model';
-import {
-  Component,
-  OnInit,
-  HostBinding
-} from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { RouteAnimations } from '../../../shared/route-animation';
+import { Recipe } from '../recipe.model';
 import { ShoppingListService } from '../../shopping-list/shopping-list.service';
-import { ActivatedRoute, Params, Router } from '../../../../node_modules/@angular/router';
-import { RouteAnimations } from '../../shared/route-animation';
+import { RecipesService } from '../recipes.service';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+
 
 @Component({
   selector: 'app-recipe-detail',

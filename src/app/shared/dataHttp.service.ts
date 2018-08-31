@@ -2,9 +2,6 @@ import {
   AuthService
 } from './../register/auth.service';
 import {
-  Recipe
-} from './../recipes/recipe.model';
-import {
   Injectable
 } from '@angular/core';
 import {
@@ -12,6 +9,7 @@ import {
 } from '@angular/common/http';
 // tslint:disable-next-line:import-blacklist
 import 'rxjs/Rx';
+import { Recipe } from '../app-main/recipes/recipe.model';
 
 @Injectable()
 export class DataHttp {

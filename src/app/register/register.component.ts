@@ -63,8 +63,8 @@ export class RegisterComponent implements OnInit {
           this.isLogging = false;
           // finally navigating to the main page after some delay
           setTimeout(() => {
-            this.router.navigate(['/recipes']);
-          }, 5000);
+            this.router.navigate(['/']);
+          }, 2000);
         }
       }
     );

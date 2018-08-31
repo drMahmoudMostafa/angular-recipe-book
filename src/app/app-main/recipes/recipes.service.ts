@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs/Subject';
-import { DataHttp } from './../shared/dataHttp.service';
+import { DataHttp } from './../../shared/dataHttp.service';
 import {
   Injectable
 } from '@angular/core';
