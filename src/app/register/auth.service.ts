@@ -5,10 +5,14 @@ import {
   Injectable
 } from '@angular/core';
 import firebase = require('firebase');
+// tslint:disable-next-line:import-blacklist
+import { Subscription } from 'rxjs';
 @Injectable()
 export class AuthService {
+  loginMode: string;
   processSuccess = new Subject < boolean > ();
-  userName = new Subject < string > ();
+  userNameSubject = new Subject < string > ();
+  userName = '';
   token = '';
   constructor() {}
   signUp(firstName: string, lastName: string = '', email: string, password: string) {
@@ -28,7 +32,7 @@ export class AuthService {
               photoURL: ''
             }).then(
               () => {
-                this.userName.next(user.displayName);
+                this.userNameSubject.next(user.displayName);
               }
             );
           }
@@ -38,7 +42,7 @@ export class AuthService {
     firebase.auth().signInWithEmailAndPassword(email, password).then(
       (data) => {
         const userName = data.user.displayName;
-        this.userName.next(userName);
+        this.userNameSubject.next(userName);
         console.log(userName);
         this.processSuccess.next(true);
         firebase.auth().currentUser.getIdToken().then(
@@ -59,4 +63,10 @@ export class AuthService {
     );
     return this.token;
   }
+  // tslint:disable-next-line:member-ordering
+  subsription: Subscription = this.userNameSubject.subscribe(
+    (value: string) => {
+      this.userName = value;
+    }
+  );
 }

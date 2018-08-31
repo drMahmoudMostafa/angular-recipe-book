@@ -1,0 +1,12 @@
+<!-- the div to be showen after submitting successfully -->
+<div class="video-success mt-4">
+  <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+  </svg>
+</div>
+<p class="lead" *ngIf="loginMode == 'logIn'">Welcome <span class="userName font-weight-normal">{{ userName }}</span>
+  , you logged in succefully</p>
+<p class="lead" *ngIf="loginMode == 'signUp'">Welcome <span class="userName font-weight-normal">{{ userName }}</span>
+  , your account is created successfully .</p>
+  <button class="btn btn-success my-auto mt-4 px-3" routerLink="/">To Dashboard</button>

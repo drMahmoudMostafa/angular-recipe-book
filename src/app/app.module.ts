@@ -1,3 +1,4 @@
+import { AuthGuard } from './shared/auth-guard.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,7 +28,7 @@ import { AuthService } from './register/auth.service';
     RegisterModule,
     SharedModule,
   ],
-  providers: [ShoppingListService, RecipesService, DataHttp, AuthService],
+  providers: [ShoppingListService, RecipesService, DataHttp, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

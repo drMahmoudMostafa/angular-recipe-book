@@ -25,18 +25,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private recipeServ: RecipesService, private authServ: AuthService) {}
 
   ngOnInit() {
-    this.authServ.userName.subscribe(
-      (data: string) => {
-        console.log('userName before setting is : ' + this.userName);
-        console.log('the value recieved from the auth service for userName is : ' + data);
-        this.userName = data;
-        console.log('so the userName in the component is : ' + this.userName);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
     console.log('HeaderComponent intialized');
+    this.userName = this.authServ.userName;
+    console.log(this.userName);
   }
   onSaveData() {
     // saving recipes to the database

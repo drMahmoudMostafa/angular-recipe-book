@@ -1,11 +1,17 @@
+import { FormComponent } from './form/form.component';
+import { SuccessComponent } from './success/success.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register.component';
 
 
 const registerRoutes: Routes = [
-    {path: 'logIn', component: RegisterComponent, data: {loginMode: 'logIn', animation: 'LogInPage'}},
-    {path: 'signUp', component: RegisterComponent, data: {loginMode: 'signUp', animation: 'SignUpPage'}}
+    {path: 'register', children: [
+      {path: 'welcome', component: SuccessComponent},
+      {path: 'logIn', component: FormComponent, data: {loginMode: 'logIn'}},
+      {path: 'signUp', component: FormComponent, data: {loginMode: 'signUp'}},
+      {path: '', redirectTo: '/register/logIn', pathMatch: 'full'}
+    ]}
 ];
 
 @NgModule({
